@@ -1,0 +1,42 @@
+// ============================================================
+// Global CSS — Tailwind v4 uses CSS-first configuration.
+// With Tailwind v4 we @import "tailwindcss" and define custom
+// tokens using @theme. No tailwind.config.js file is needed.
+// ============================================================
+
+@import "tailwindcss";
+
+/* Custom theme tokens that extend the default Tailwind palette */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "JetBrains Mono", monospace;
+
+  /* Ensure background stays white (light theme only) */
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9fafb; /* gray-50 */
+  color: #111827;             /* gray-900 */
+  font-family: var(--font-sans);
+}
+
+/* Remove the automatic dark mode that was in the default template */
+/* We explicitly implement a light theme only */
+
+/* Custom monospace style for code labels */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Smooth focus ring for interactive elements */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
